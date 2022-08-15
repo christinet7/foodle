@@ -66,7 +66,6 @@ public class Word extends JFrame implements ActionListener {
     enterButton.addActionListener( this );
     enterButton.setBackground( SEA_GREEN ) ;
 
-
     // create hint button
     boostButton = new JButton( "boost" ) ;
     boostButton.setForeground( Color.BLACK ) ;
@@ -77,7 +76,6 @@ public class Word extends JFrame implements ActionListener {
     panel2.add( textField1 ) ;
     panel2.add( enterButton ) ;
     panel2.add( boostButton ) ;
-    
     
    
     //**********create panel 3 - labels to dusplay the user's input / turns 
@@ -114,7 +112,6 @@ public class Word extends JFrame implements ActionListener {
     panel3.add( label5 ) ;
     panel3.add( label6 ) ;
     panel3.add( label7 ) ;
-    
 
     // add panels to jframe
     add( panel1 ) ;
@@ -123,7 +120,6 @@ public class Word extends JFrame implements ActionListener {
     add( panel3 ) ;
     setVisible( true ) ;
   }
-
 
   // ****** generates a word
   public static String WordGenerator() {
@@ -149,13 +145,11 @@ public class Word extends JFrame implements ActionListener {
 
   // first checks user's input ( by getting textField's text ) against the correct word and sets the label's text w/ corresponding colored letters to indicate whether letters inputted are (a) in the correct word, and (b) in the correct position 
   public static void Checker ( JLabel label, JTextField text, String word ) {
-    
     // create array of letters for user's input
     String input = text.getText() ;
     ArrayList <Character> userArr = new ArrayList <Character>() ;
     //char[] userArr = new char[ 5 ] ;
     for( int i = 0; i < 5; i++ ) { userArr.add( input.charAt(i) ) ; }
-    
 
     // create array of letters for correct word
     ArrayList <Character> correctArr = new ArrayList <Character>() ;
@@ -197,7 +191,7 @@ public class Word extends JFrame implements ActionListener {
   }
 
   public void actionPerformed( ActionEvent evt )  {
-    System.out.println( "Button pressed!" ) ;
+    //System.out.println( "Button pressed!" ) ;
     JButton pressedButton = (JButton)evt.getSource() ;
 
     // if enter button is pressed:
@@ -286,7 +280,6 @@ public class Word extends JFrame implements ActionListener {
   }
 
   public static void main(String[] args) {
-    //System.out.println( correctWord ) ;
     // generate word 
     WordGenerator() ;
     Word word = new Word() ;
